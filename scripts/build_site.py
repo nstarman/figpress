@@ -10,7 +10,7 @@ from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-INSTALL = {"pypi": "pip install {name}", "npm": "npm install {name}"}
+INSTALL = {"pypi": "pip install {name}", "npm": "npm install {name}"}  # {name}: the member's name on that index
 
 
 def member_html(m: dict) -> str:
@@ -18,7 +18,7 @@ def member_html(m: dict) -> str:
     status = "" if m["released"] else '<span class="status">not released yet</span>'
     note = f" {escape(m['note'])}" if m.get("note") else ""
     # A member not released yet gets no install commands: they would fail.
-    install = "".join(f"<pre>{escape(INSTALL[i].format(name=m['name']))}</pre>" for i in m["indexes"]) if m["released"] else ""
+    install = "".join(f"<pre>{escape(INSTALL[i].format(name=n))}</pre>" for i, n in m["indexes"].items()) if m["released"] else ""
     return (f'<section class="member" id="{name}"><h2>{name}{status}</h2>'
             f"<p>{escape(m['purpose'])}{note}</p>{install}"
             f'<p><a href="{escape(m["repository"])}">Code</a> · <a href="{escape(m["docs"])}">Documentation</a></p></section>')

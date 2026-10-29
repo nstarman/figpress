@@ -40,7 +40,7 @@ class SiteTest(unittest.TestCase):
         f = dict(FAMILY, members=[dict(FAMILY["members"][0], released=True)])
         html = build_site.page(f)
         self.assertIn(f"pip install {f['members'][0]['name']}", html)
-        self.assertIn(f"npm install {f['members'][0]['name']}", html)
+        self.assertIn(f"npm install @nstarkman/{f['members'][0]['name']}", html)
 
 
 if __name__ == "__main__":

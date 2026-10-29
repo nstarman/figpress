@@ -36,7 +36,7 @@ install commands and working links, without reading any other page.
 
 ### User Story 2 - The name `figpress` belongs to the family (Priority: P1)
 
-Someone who runs `pip install figpress` or `npm install figpress` gets a genuine, small package
+Someone who runs `pip install figpress` or `npm install @nstarkman/figpress` gets a genuine, small package
 from the family that tells them what figpress is, lists its members and points to the website,
 rather than nothing or someone else's package.
 
@@ -51,7 +51,7 @@ entry point; it prints the family's members and the website address.
 1. **Given** the first release is published, **When** someone installs `figpress` from PyPI and
    runs it, **Then** it prints the family's members (from the same list as the website) and the
    website address.
-2. **Given** the first release is published, **When** someone installs `figpress` from npm and
+2. **Given** the first release is published, **When** someone installs `@nstarkman/figpress` from npm and
    runs it, **Then** it prints the same.
 3. **Given** either package page on an index, **When** a reader opens it, **Then** it describes
    the family and links to the website and repository.
@@ -97,8 +97,8 @@ indexes, built from that commit.
 - **FR-002**: The website MUST be generated from that list and published from the repository's
   default branch; a change to the list MUST update the website with no other edit.
 - **FR-003**: The website MUST work without JavaScript, from any static host, and on a phone.
-- **FR-004**: The `figpress` package MUST be published to PyPI and to npm under the name
-  `figpress`, with a description, the website and repository links, and the MIT licence.
+- **FR-004**: The `figpress` package MUST be published to PyPI as `figpress` and to npm as
+  `@nstarkman/figpress` (npm refuses the unscoped name as too similar to `figures`), with a description, the website and repository links, and the MIT licence.
 - **FR-005**: Running the package's entry point (`figpress` on the command line from either index)
   MUST print the family's members and the website address, from the same list as the website.
 - **FR-006**: The package MUST NOT depend on the other family packages.
@@ -110,14 +110,15 @@ indexes, built from that commit.
 
 ### Key Entities
 
-- **Family member**: name, purpose, repository, documentation link, indexes (PyPI, npm), status
+- **Family member**: name, purpose, repository, documentation link, its name on each index (PyPI,
+  npm), status
   (released or not yet).
 
 ## Success Criteria *(mandatory)*
 
 ### Measurable Outcomes
 
-- **SC-001**: `pip install figpress` and `npm install figpress` both succeed and print the family
+- **SC-001**: `pip install figpress` and `npm install @nstarkman/figpress` both succeed and print the family
   list, from the first release on.
 - **SC-002**: A reader finds a member's install command on the website in under 30 seconds.
 - **SC-003**: Adding a member is a change to one file, and the website shows it after merge.
@@ -131,4 +132,6 @@ indexes, built from that commit.
 - PyPI's pending trusted publisher for `figpress` is already registered (repository
   `nstarman/figpress`, workflow `release.yml`, environment `pypi`).
 - The npm package is plain JavaScript with no dependencies; the PyPI package is pure Python.
+- npm names are scoped `@nstarkman/<name>`: npm refused the unscoped `figpress` as too similar to
+  `figures`, and the family is mostly for the maintainer's own use.
 - Members at first: figpress-apps (the renamed figkit) and figpress-plotly, both not yet released.

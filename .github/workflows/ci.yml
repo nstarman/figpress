@@ -33,5 +33,5 @@ jobs:
         run: |
           npm pack
           mkdir /tmp/try && cd /tmp/try && npm init -y >/dev/null
-          npm install "$GITHUB_WORKSPACE"/figpress-*.tgz
+          npm install "$GITHUB_WORKSPACE"/nstarkman-figpress-*.tgz
           npx figpress

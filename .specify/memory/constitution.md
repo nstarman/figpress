@@ -16,7 +16,9 @@ website and the `figpress` package itself; each `figpress-*` package lives in it
 
 ### II. A real package, not a squat
 
-- `figpress` on PyPI and npm is a small, working package: it describes the family, lists its
+- `figpress` on PyPI (`@nstarkman/figpress` on npm, which refuses the unscoped name as too
+  similar to `figures`; the family's npm packages are all `@nstarkman/<name>`) is a small, working
+  package: it describes the family, lists its
   members (from `family.json`) and points to the website. It MUST NOT claim functionality it does
   not have, and MUST NOT depend on the other `figpress-*` packages until a member is useful to
   install by itself through it.
@@ -56,4 +58,4 @@ website and the `figpress` package itself; each `figpress-*` package lives in it
 - Amendments are made by pull request with a version bump: MAJOR for removing or redefining a
   principle, MINOR for adding or materially expanding one, PATCH for wording.
 
-**Version**: 1.0.0 | **Ratified**: 2026-10-28 | **Last Amended**: 2026-10-28
+**Version**: 1.0.1 | **Ratified**: 2026-10-28 | **Last Amended**: 2026-10-28

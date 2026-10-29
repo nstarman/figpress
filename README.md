@@ -13,13 +13,14 @@ for and how to install it. The members today:
   counterparts of a paper's figures, built from the paper's own data and published next to the
   PDF. Formerly figkit. *Not released yet.*
 
-This repository hosts the website and the small `figpress` package on
-[PyPI](https://pypi.org/project/figpress/) and [npm](https://www.npmjs.com/package/figpress), which
-prints the same list:
+This repository hosts the website and the small `figpress` package, on
+[PyPI](https://pypi.org/project/figpress/) as `figpress` and on
+[npm](https://www.npmjs.com/package/@nstarkman/figpress) as `@nstarkman/figpress`, which prints the
+same list:
 
 ```bash
 pipx run figpress        # or: uvx figpress
-npx figpress
+npx @nstarkman/figpress
 ```
 
 ## Developing

@@ -9,7 +9,10 @@
       "purpose": "A paper's figures in Plotly: one definition gives the print figure the paper publishes and a matching interactive web figure that can do more.",
       "repository": "https://github.com/nstarman/figpress-plotly",
       "docs": "https://github.com/nstarman/figpress-plotly#readme",
-      "indexes": ["pypi", "npm"],
+      "indexes": {
+        "pypi": "figpress-plotly",
+        "npm": "@nstarkman/figpress-plotly"
+      },
       "released": false
     },
     {
@@ -17,7 +20,10 @@
       "purpose": "Interactive apps that are the counterparts of a paper's figures, such as globes of viewing directions and linked sky panels, built from the paper's own data and published next to the PDF.",
       "repository": "https://github.com/nstarman/figpress-apps",
       "docs": "https://github.com/nstarman/figpress-apps#readme",
-      "indexes": ["pypi", "npm"],
+      "indexes": {
+        "pypi": "figpress-apps",
+        "npm": "@nstarkman/figpress-apps"
+      },
       "released": false,
       "note": "Formerly figkit."
     }
