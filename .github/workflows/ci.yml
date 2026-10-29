@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - name: Versions agree
+        run: python3 scripts/version.py check
+      - name: Python tests
+        run: python3 -m unittest discover -s tests -v
+      - name: npm CLI tests
+        run: node --test "tests/*.test.mjs"
+      - name: Website builds
+        run: python3 scripts/build_site.py
+      - name: The Python package builds and runs
+        run: |
+          uv build
+          uv run --no-project --with dist/*.whl figpress
+      - name: The npm package packs and runs
+        run: |
+          npm pack
+          mkdir /tmp/try && cd /tmp/try && npm init -y >/dev/null
+          npm install "$GITHUB_WORKSPACE"/figpress-*.tgz
+          npx figpress
