@@ -13,7 +13,7 @@
         "pypi": "figpress-plotly",
         "npm": "@nstarkman/figpress-plotly"
       },
-      "released": false
+      "released": true
     },
     {
       "name": "figpress-apps",
@@ -21,10 +21,9 @@
       "repository": "https://github.com/nstarman/figpress-apps",
       "docs": "https://github.com/nstarman/figpress-apps#readme",
       "indexes": {
-        "pypi": "figpress-apps",
-        "npm": "@nstarkman/figpress-apps"
+        "pypi": "figpress-apps"
       },
-      "released": false,
+      "released": true,
       "note": "Formerly figkit."
     }
   ]
