@@ -17,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TAG = re.compile(r"^v(\d{4})\.(\d{2})\.(\d{2})(?:\.(\d+))?$")
 PY_VERSION = re.compile(r'^__version__ = "([^"]+)"$', re.M)
+JS_VERSION = re.compile(r'^export const version = "([^"]+)";$', re.M)  # index.js, if it states one
 
 
 def versions(tag: str) -> dict[str, str]:
@@ -39,6 +40,9 @@ def current() -> dict[str, str]:
     """The versions the repository's files say."""
     py = PY_VERSION.search(init_file().read_text(encoding="utf-8")).group(1)
     npm = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]
+    js = ROOT / "index.js"
+    if js.exists() and (m := JS_VERSION.search(js.read_text(encoding="utf-8"))) and m.group(1) != npm:
+        npm = f"{npm} (index.js says {m.group(1)})"
     return {"pypi": py, "npm": npm}
 
 
@@ -50,6 +54,9 @@ def set_versions(tag: str) -> None:
     data = json.loads(pkg.read_text(encoding="utf-8"))
     data["version"] = want["npm"]
     pkg.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+    js = ROOT / "index.js"
+    if js.exists():
+        js.write_text(JS_VERSION.sub(f'export const version = "{want["npm"]}";', js.read_text(encoding="utf-8")), encoding="utf-8")
 
 
 def main(argv: list[str]) -> int:
