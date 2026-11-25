@@ -16,6 +16,16 @@
       "released": true
     },
     {
+      "name": "figpress-bokeh",
+      "purpose": "A paper's figures in Bokeh: one definition gives the print figure the paper publishes and a matching interactive web figure, with panels placed exactly on the page.",
+      "repository": "https://github.com/nstarman/figpress-bokeh",
+      "docs": "https://github.com/nstarman/figpress-bokeh#readme",
+      "indexes": {
+        "pypi": "figpress-bokeh"
+      },
+      "released": true
+    },
+    {
       "name": "figpress-apps",
       "purpose": "Interactive apps that are the counterparts of a paper's figures, such as globes of viewing directions and linked sky panels, built from the paper's own data and published next to the PDF.",
       "repository": "https://github.com/nstarman/figpress-apps",

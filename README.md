@@ -8,10 +8,12 @@ for and how to install it. The members today:
 
 - **[figpress-plotly](https://github.com/nstarman/figpress-plotly)**: a paper's figures in Plotly.
   One definition gives the print figure the paper publishes and a matching interactive web figure
-  that can do more. *Not released yet.*
+  that can do more.
+- **[figpress-bokeh](https://github.com/nstarman/figpress-bokeh)**: a paper's figures in Bokeh,
+  with the same one-definition approach, and several panels placed exactly on one page.
 - **[figpress-apps](https://github.com/nstarman/figpress-apps)**: interactive apps that are the
   counterparts of a paper's figures, built from the paper's own data and published next to the
-  PDF. Formerly figkit. *Not released yet.*
+  PDF. Formerly figkit.
 
 This repository hosts the website and the small `figpress` package, on
 [PyPI](https://pypi.org/project/figpress/) as `figpress` and on
