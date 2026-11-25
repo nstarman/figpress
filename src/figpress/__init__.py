@@ -1,7 +1,7 @@
 """figpress: the home of a family of packages for the figures of scientific papers.
 
 This package lists the family's members and points to its website; the members are separate
-packages (``figpress-plotly``, ``figpress-apps``). ``python -m figpress`` prints the list.
+packages (``figpress-plotly``, ``figpress-bokeh``, ``figpress-apps``). ``python -m figpress`` prints the list.
 """
 
 import json
